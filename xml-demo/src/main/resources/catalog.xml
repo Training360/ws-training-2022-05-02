@@ -2,9 +2,7 @@
     <book
 
             isbn10="ab12345678">
-        <title>Java
-
-            and XML</title>
+        <title>Java and XML</title>
         <available/>
     </book>
     <!-- Ctrl  + / -->
