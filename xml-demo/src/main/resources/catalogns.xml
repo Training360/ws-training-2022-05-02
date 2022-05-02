@@ -8,5 +8,6 @@
     </book>
     <book isbn10="cd12345678">
         <title>Java and JSON</title>
+<!--        <stock>2</stock>-->
     </book>
 </catalog>
