@@ -1,0 +1,12 @@
+<catalog xmlns="https://training360.com/schemas/catalog"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation=
+                 "https://training360.com/schemas/catalog catalog.xsd">
+    <book isbn10="ab12345678">
+        <title>Java and XML</title>
+        <available/>
+    </book>
+    <book isbn10="cd12345678">
+        <title>Java and JSON</title>
+    </book>
+</catalog>
