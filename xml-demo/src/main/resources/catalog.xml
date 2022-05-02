@@ -1,0 +1,15 @@
+<catalog>
+    <book
+
+            isbn10="ab12345678">
+        <title>Java
+
+            and XML</title>
+        <available/>
+    </book>
+    <!-- Ctrl  + / -->
+    <book isbn10="cd12345678" id="324">
+        <title>Java and JSON</title>
+        <content><![CDATA[select id, name from employee where salary < 100]]></content>
+    </book>
+</catalog>
