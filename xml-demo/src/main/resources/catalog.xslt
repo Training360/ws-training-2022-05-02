@@ -5,9 +5,10 @@
         <html>
             <body>
                 <h2>Catalog</h2>
-                <table>
+                <table border="1">
                     <xsl:for-each select="/catalog/book">
                         <tr>
+                            <td><xsl:value-of select="@isbn10"/></td>
                             <td><xsl:value-of select="title"/></td>
                             <td><xsl:if test="available">available</xsl:if></td>
                         </tr>
