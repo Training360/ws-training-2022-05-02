@@ -2,6 +2,7 @@ package calculator;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +16,14 @@ public class CalculatorServiceApplication {
 		SpringApplication.run(CalculatorServiceApplication.class, args);
 	}
 
+	@Value("${published.endpoint}")
+	private String publishedEndpoint;
+
 	@Bean
 	public Endpoint calculatorEndpoint(Bus bus) {
 		var calculator = new CalculatorEndpoint();
 		var endpoint = new EndpointImpl(bus, calculator);
+		endpoint.setPublishedEndpointUrl(publishedEndpoint);
 		endpoint.publish("/calculator");
 		return endpoint;
 	}

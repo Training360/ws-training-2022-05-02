@@ -8,7 +8,7 @@ import javax.jws.WebService;
 @WebService(targetNamespace = "http://training360.com/schemas/calculator")
 public class CalculatorEndpoint {
 
-    @WebMethod
+    @WebMethod(operationName = "addOperation")
     @WebResult(name = "result")
     public CalculatorAddResponse add(@WebParam(name = "arguments") CalculatorAddRequest request) {
         return new CalculatorAddResponse(request.getA() + request.getB());
