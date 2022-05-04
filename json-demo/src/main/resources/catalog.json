@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "isbn10": "Java and JSON",
+      "title": "abc"
+    },
+    {
+      "isbn10": "Java and REST",
+      "title": "xyz"
+    },
+    {
+      "isbn10": "Java and REST",
+      "title": "xyz"
+    },
+    {
+      "isbn10": "Java and REST",
+      "title": "xyz"
+    },
+    {
+      "isbn10": "Java and REST",
+      "title": "xyz"
+    }
+  ]
+}
