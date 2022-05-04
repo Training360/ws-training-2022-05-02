@@ -1,0 +1,30 @@
+### List books
+
+GET http://localhost:8080/api/books
+
+### Get books
+
+GET http://localhost:8080/api/books/aaa
+
+### Create book
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+    "isbn10": "xxx",
+    "title": "Hello Visual Studio Code"
+}
+
+### Update book
+
+PUT http://localhost:8080/api/books/xxx
+Content-Type: application/json
+
+{
+    "title": "Hello Visual Studio Code 2"
+}
+
+### Delete
+
+DELETE http://localhost:8080/api/books/xxx
