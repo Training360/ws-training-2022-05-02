@@ -6,6 +6,10 @@ GET http://localhost:8080/api/books
 
 GET http://localhost:8080/api/books/aaa
 
+### Get unknown book
+
+GET http://localhost:8080/api/books/qqq
+
 ### Create book
 
 POST http://localhost:8080/api/books
@@ -14,6 +18,16 @@ Content-Type: application/json
 {
     "isbn10": "xxx",
     "title": "Hello Visual Studio Code"
+}
+
+### Create empty book
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+    "isbn10": "zzz",
+    "title": ""
 }
 
 ### Update book
