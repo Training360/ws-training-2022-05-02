@@ -33,4 +33,18 @@ public class BookResource {
         return book;
     }
 
+    @PUT // idempotens
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("{isbn10}")
+    public Book update(@PathParam("isbn10") String isbn10, Book book) {
+        return bookService.update(isbn10, book.getTitle());
+    }
+
+    @DELETE
+    @Path("{isbn10}")
+    public void delete(@PathParam("isbn10") String isbn10) {
+        bookService.delete(isbn10);
+    }
+
 }

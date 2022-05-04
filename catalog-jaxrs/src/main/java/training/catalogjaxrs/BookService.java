@@ -31,9 +31,10 @@ public class BookService {
         books.add(book);
     }
 
-    public void update(Book book) {
-        Book found = findByIsbn10(book.getIsbn10());
-        found.setTitle(book.getTitle());
+    public Book update(String isbn10, String title) {
+        Book found = findByIsbn10(isbn10);
+        found.setTitle(title);
+        return found;
     }
 
     public void delete(String isbn10) {
