@@ -1,34 +1,36 @@
 package training.catalogjaxrs;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import lombok.AllArgsConstructor;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/api/books")
+@AllArgsConstructor
 public class BookResource {
+
+    private BookService bookService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Book> getBooks() {
-        return List.of(
-                new Book("aaa", "Java and JSON"),
-                new Book("bbb", "Java and REST")
-        );
+        return bookService.findAll();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{isbn10}")
     public Book getBookByIsbn10(@PathParam("isbn10") String isbn10) {
-        if (isbn10.equals("aaa")) {
-            return new Book("aaa", "Java and JSON");
-        }
-        else {
-            return new Book("bbb", "Java and REST");
-        }
+        return bookService.findByIsbn10(isbn10);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Book create(Book book) {
+        bookService.add(book);
+        return book;
     }
 
 }

@@ -15,7 +15,9 @@ public class CatalogJaxrsApplication {
 	@Bean
 	public ResourceConfig config() {
 		var config = new ResourceConfig();
-		config.register(new BookResource());
+		var service = new BookService();
+		service.init();
+		config.register(new BookResource(service));
 		return config;
 	}
 
