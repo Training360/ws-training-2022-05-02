@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a376e12a-673b-483f-8330-13281c004f33" activeEnvironment="Default" name="www.learnwebservices" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="HelloEndpointServiceSoapBinding TestSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="d49deee4-d2e7-4560-85ce-b591ed39a6b9" wsaVersion="NONE" name="HelloEndpointServiceSoapBinding" type="wsdl" bindingName="{http://learnwebservices.com/services/hello}HelloEndpointServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.learnwebservices.com/services/hello?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.learnwebservices.com/services/hello?WSDL"><con:part><con:url>https://www.learnwebservices.com/services/hello?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="HelloEndpointService" targetNamespace="http://learnwebservices.com/services/hello" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://learnwebservices.com/services/hello" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://learnwebservices.com/services/hello" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SayHello" type="tns:SayHello"/>
+      <xs:element name="SayHelloResponse" type="tns:SayHelloResponse"/>
+      <xs:complexType name="SayHello">
+        <xs:sequence>
+          <xs:element name="HelloRequest" type="tns:helloRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="helloRequest">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SayHelloResponse">
+        <xs:sequence>
+          <xs:element name="HelloResponse" type="tns:helloResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="helloResponse">
+        <xs:sequence>
+          <xs:element name="Message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SayHelloResponse">
+    <wsdl:part element="tns:SayHelloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SayHello">
+    <wsdl:part element="tns:SayHello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloEndpoint">
+    <wsdl:operation name="SayHello">
+      <wsdl:input message="tns:SayHello" name="SayHello"></wsdl:input>
+      <wsdl:output message="tns:SayHelloResponse" name="SayHelloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloEndpointServiceSoapBinding" type="tns:HelloEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloEndpointService">
+    <wsdl:port binding="tns:HelloEndpointServiceSoapBinding" name="HelloEndpointPort">
+      <soap:address location="https://www.learnwebservices.com/services/hello"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.learnwebservices.com/services/hello</con:endpoint></con:endpoints><con:operation id="cfbb67f2-5387-4729-b7a5-8e595d948a00" isOneWay="false" action="" name="SayHello" bindingOperationName="SayHello" type="Request-Response" outputName="SayHelloResponse" inputName="SayHello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="959208e2-02ad-4f47-8c38-bf5b55000bea" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.learnwebservices.com/services/hello</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hel:SayHello>\r
+         <hel:HelloRequest>\r
+            <hel:Name>John Doe</hel:Name>\r
+         </hel:HelloRequest>\r
+      </hel:SayHello>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://learnwebservices.com/services/hello/HelloEndpoint/SayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="11eb41ab-1fc6-40f0-8fb5-2a05d8afa527" name="HelloEndpointServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c9fc1ac3-abcf-4f42-a1f3-8d94f809cecf" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SayHello TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d3e84aab-42d3-4c7e-b3d8-62aab763a348" name="SayHello"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloEndpointServiceSoapBinding</con:interface><con:operation>SayHello</con:operation><con:request name="SayHello" id="8dbaadbb-6830-4fab-998f-8e464644a739"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.learnwebservices.com/services/hello</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hel:SayHello>\r
+         <hel:HelloRequest>\r
+            <hel:Name>John Doe</hel:Name>\r
+         </hel:HelloRequest>\r
+      </hel:SayHello>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match" id="cd83aec9-c835-4c36-b8c2-3ed7bab2938e" name="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace hello='http://learnwebservices.com/services/hello';
+
+//hello:Message</path><content>Hello John Doe!</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://learnwebservices.com/services/hello/HelloEndpoint/SayHello" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

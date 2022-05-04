@@ -21,9 +21,9 @@ public class CalculatorServiceApplication {
 
 	@Bean
 	public Endpoint calculatorEndpoint(Bus bus) {
-		var calculator = new CalculatorEndpoint();
+		var calculator = new DefaultCalculatorEndpoint();
 		var endpoint = new EndpointImpl(bus, calculator);
-		endpoint.setPublishedEndpointUrl(publishedEndpoint);
+		//endpoint.setPublishedEndpointUrl(publishedEndpoint);
 		endpoint.publish("/calculator");
 		return endpoint;
 	}
